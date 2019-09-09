@@ -46,11 +46,20 @@ public class MoveBoat : MonoBehaviour {
 		//if((compass.localEulerAngles.y >= (360 - stoppingAngle) && compass.localEulerAngles.y <= 360) || (compass.localEulerAngles.y >= 0 && compass.localEulerAngles.y <= (0 + stoppingAngle)))
 		//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 
+		if (Receivemarkers.markerint == 1010) //32770 experiment stop
+			Debug.Log ("End of Session!");
+		//pop window
+
+		//Todo
+		// on 32770 experiment stop
+		// quit app
+
+
 		if (training) {
 
 			getStim ();
 			
-			if (Input.GetKey (KeyCode.LeftArrow) || left) {
+			if (Input.GetKey (KeyCode.LeftArrow) || (left  && hidearrow)) {
 				left = true;
 				//			right = false;
 				if (!Settings.reverseHands)
@@ -59,7 +68,7 @@ public class MoveBoat : MonoBehaviour {
 					transform.Rotate (Vector3.down * turnspeed * Time.deltaTime, Space.World);
 				//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 			}
-			if (Input.GetKey (KeyCode.RightArrow) || right) {
+			if (Input.GetKey (KeyCode.RightArrow) || (right && hidearrow)) {
 				//			left = false;
 				right = true;
 				if (!Settings.reverseHands)
@@ -126,31 +135,46 @@ public class MoveBoat : MonoBehaviour {
 		switch (stim)
 		{
 		case 800: //hide cross
-			cross= false; crossui.enabled = false;
+			crossui.enabled = false;
+			leftarrow.enabled = false;
+			rightarrow.enabled = false;
+			cross= false; 
 			left = false;
 			right = false;
 			hidearrow = false;
 			break;
 		case 786: // show cross
-			cross = true; crossui.enabled = true;
+			crossui.enabled = true;
+			leftarrow.enabled = false;
+			rightarrow.enabled = false;
+			cross = true;
 			left = false;
 			right = false;
 			hidearrow = false;
 			break;
 		case 770: // right arrow
-			cross= true; crossui.enabled = true;
+			crossui.enabled = true;
+			leftarrow.enabled = false;
+			rightarrow.enabled = true;
+			cross= true;
 			left = false;
 			right = true;
 			hidearrow = false;
 			break;
 		case 769: // left arrow
-			cross= true; crossui.enabled = true;
+			crossui.enabled = true;
+			leftarrow.enabled = true;
+			rightarrow.enabled = false;
+			cross= true; 
 			left = true;
 			right = false;
 			hidearrow = false;
 			break;
 		case 781: // hide arrow
-			cross= true; crossui.enabled = true;
+			crossui.enabled = true;
+			leftarrow.enabled = false;
+			rightarrow.enabled = false;
+			cross= true;
 			hidearrow = true;
 			//left= false;
 			//right= false;

@@ -34,12 +34,12 @@ public class RotateRow : MonoBehaviour {
 		if (MoveBoat.training) {
 
 			// Row Left 
-			if (MoveBoat.left && this.gameObject.name == "Lpivot") {
+			if ((MoveBoat.left && MoveBoat.hidearrow) && this.gameObject.name == "Lpivot") {
 				GameObject.FindGameObjectWithTag ("LeftRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 			}
 			
 			// Row Right 
-			if (MoveBoat.right && this.gameObject.name == "Rpivot") {
+			if ((MoveBoat.right && MoveBoat.hidearrow) && this.gameObject.name == "Rpivot") {
 				GameObject.FindGameObjectWithTag ("RightRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 
 			}
