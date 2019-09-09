@@ -10,6 +10,7 @@ public class MoveBoat : MonoBehaviour {
 	public static float stoppingAngle = 45f;
 
 	public Transform compass;
+	public GameObject EndofSessionPanel;
 
 	public Image crossui, leftarrow, rightarrow;
 	public static bool cross, left, right, hidearrow = false;
@@ -18,6 +19,7 @@ public class MoveBoat : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//settings
+		EndofSessionPanel.SetActive(false);
 		Settings.reverseHands = true;
 		boatspeed = 5f;
 
@@ -47,12 +49,16 @@ public class MoveBoat : MonoBehaviour {
 		//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 
 		if (Receivemarkers.markerint == 1010) //32770 experiment stop
-			Debug.Log ("End of Session!");
-		//pop window
+			EndofSessionPanel.SetActive(true); //pop window
+			//Debug.Log ("End of Session!");
+
 
 		//Todo
 		// on 32770 experiment stop
 		// quit app
+		if (Receivemarkers.markerint == 32770) //32770
+			Debug.Log ("32770 experiment stop");
+		
 
 
 		if (training) {
@@ -95,7 +101,7 @@ public class MoveBoat : MonoBehaviour {
 //				left = true;
 //			else left = false;
 
-			if ((left  && hidearrow)&& ldaSignal()>=0) {
+			if (Input.GetKey (KeyCode.LeftArrow) ||(left  && hidearrow)&& ldaSignal()>=0) {
 					//left = true;
 
 					//			right = false;
@@ -105,7 +111,7 @@ public class MoveBoat : MonoBehaviour {
 						transform.Rotate (Vector3.down * turnspeed * Time.deltaTime, Space.World);
 					//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 				}
-			if ((right && hidearrow) && ldaSignal()<=0) {
+			if (Input.GetKey (KeyCode.RightArrow) ||(right && hidearrow) && ldaSignal()<=0) {
 					//			left = false;
 
 					right = true;

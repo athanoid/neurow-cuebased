@@ -34,12 +34,12 @@ public class RotateRow : MonoBehaviour {
 		if (MoveBoat.training) {
 
 			// Row Left 
-			if ((MoveBoat.left && MoveBoat.hidearrow) && this.gameObject.name == "Lpivot") {
+			if ((Input.GetKey (KeyCode.LeftArrow) || (MoveBoat.left && MoveBoat.hidearrow)) && this.gameObject.name == "Lpivot") {
 				GameObject.FindGameObjectWithTag ("LeftRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 			}
 			
 			// Row Right 
-			if ((MoveBoat.right && MoveBoat.hidearrow) && this.gameObject.name == "Rpivot") {
+			if ((Input.GetKey (KeyCode.RightArrow) ||(MoveBoat.right && MoveBoat.hidearrow)) && this.gameObject.name == "Rpivot") {
 				GameObject.FindGameObjectWithTag ("RightRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 
 			}
@@ -47,12 +47,12 @@ public class RotateRow : MonoBehaviour {
 		} else { // for ONLINE
 
 			// Row Left 
-			if ((MoveBoat.left && MoveBoat.hidearrow && MoveBoat.ldaSignal() >=0) && this.gameObject.name == "Lpivot") {
+			if ((Input.GetKey (KeyCode.LeftArrow) ||(MoveBoat.left && MoveBoat.hidearrow && MoveBoat.ldaSignal() >=0) ) && this.gameObject.name == "Lpivot") {
 				GameObject.FindGameObjectWithTag ("LeftRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 			}
 
 			// Row Right 
-			if ((MoveBoat.right && MoveBoat.hidearrow && MoveBoat.ldaSignal()<=0) && this.gameObject.name == "Rpivot") {
+			if ((Input.GetKey (KeyCode.RightArrow) || (MoveBoat.right && MoveBoat.hidearrow && MoveBoat.ldaSignal()<=0) ) && this.gameObject.name == "Rpivot") {
 				GameObject.FindGameObjectWithTag ("RightRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 
 			}
