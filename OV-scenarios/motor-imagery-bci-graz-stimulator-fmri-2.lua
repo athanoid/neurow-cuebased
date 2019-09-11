@@ -22,30 +22,9 @@ function initialize(box)
 	-- initializes random seed
 	math.randomseed(os.time())
 
-	-- fill the sequence table with predifined order
-	sequence = {}
-
-	for i = 1, number_of_trials do
-		table.insert(sequence, 1, first_class)
-		table.insert(sequence, 1, second_class)
-	end	
-
-	sequence_a = {1,2,3,4}
-	sequence_b = {5,6,7,8}
-
 
 end
 
--- chack if table contais stim (new)
-local function has_value (tab, val)
-    for index, value in ipairs(tab) do
-        if value == val then
-            return true
-        end
-    end
-
-    return false
-end
 
 
 function process(box)
@@ -65,9 +44,13 @@ function process(box)
 	box:send_stimulation(1, OVTK_StimulationId_Beep, t, 0)
 	t = t + 0
 
+	-- rest duration
+	t = t + inter_trial_duration
+	
 	-- manages trials
-for j = 1, number_of_repetitions do
+for k = 1, number_of_repetitions do
 
+	--######  left hand ######
 	for i = 1, number_of_trials do
 		-- first display cross on screen
 
@@ -81,15 +64,10 @@ for j = 1, number_of_repetitions do
 		t = t + wait_for_cue_duration
 
 		-- display cue
-
-		-- box:send_stimulation(1, sequence[i], t, 0)
-		if has_value(sequence_a, i) then
+	
 			box:send_stimulation(1, OVTK_GDF_Left, t, 0)
 			t = t + display_cue_duration
-		elseif has_value(sequence_b, i) then
-			box:send_stimulation(1, OVTK_GDF_Right, t, 0)
-			t = t + display_cue_duration
-		end
+
 		
 		-- provide feedback
 
@@ -97,15 +75,43 @@ for j = 1, number_of_repetitions do
 		t = t + feedback_duration
 
 		-- ends trial
-
 		box:send_stimulation(1, OVTK_GDF_End_Of_Trial, t, 0)
 		t = t + end_of_trial_max_duration
 		--t = t + math.random(end_of_trial_min_duration, end_of_trial_max_duration)
 
 	end
 	
-	--rest duration
+	-- ######rest duration ######
 	t = t + inter_trial_duration
+	
+	-- ######  right hand ######
+	for j = 1, number_of_trials do
+	-- first display cross on screen
+
+		box:send_stimulation(1, OVTK_GDF_Start_Of_Trial, t, 0)
+		box:send_stimulation(1, OVTK_GDF_Cross_On_Screen, t, 0)
+		--t = t + wait_for_beep_duration
+
+		-- warn the user the cue is going to appear
+
+		--box:send_stimulation(1, OVTK_StimulationId_Beep, t, 0)
+		t = t + wait_for_cue_duration
+
+		-- display cue
+			box:send_stimulation(1, OVTK_GDF_Right, t, 0)
+			t = t + display_cue_duration
+
+		-- provide feedback
+		box:send_stimulation(1, OVTK_GDF_Feedback_Continuous, t, 0)
+		t = t + feedback_duration
+
+		-- ends trial
+		box:send_stimulation(1, OVTK_GDF_End_Of_Trial, t, 0)
+		t = t + end_of_trial_max_duration
+		--t = t + math.random(end_of_trial_min_duration, end_of_trial_max_duration)
+
+	end
+	
 	
 end
 	-- send end for completeness

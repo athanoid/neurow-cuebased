@@ -74,14 +74,14 @@
 					<TypeIdentifier>(0xb0d0db45, 0x49cbc34a)</TypeIdentifier>
 					<Name>Lua Script</Name>
 					<DefaultValue></DefaultValue>
-					<Value>C:/Users/eeguser/Desktop/motor-imagery/motor-imagery-bci-graz-stimulator-fmri.lua</Value>
+					<Value>C:/Users/eeguser/Documents/git/neurow-cuebased/OV-scenarios/motor-imagery-bci-graz-stimulator-fmri-2.lua</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Number of Trials for Each Class</Name>
 					<DefaultValue>20</DefaultValue>
-					<Value>24</Value>
+					<Value>4</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -109,14 +109,14 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Wait For Beep Duration (in sec)</Name>
 					<DefaultValue>2</DefaultValue>
-					<Value>0.75</Value>
+					<Value>0</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>Wait For Cue Duration (in sec)</Name>
 					<DefaultValue>1</DefaultValue>
-					<Value>0.75</Value>
+					<Value>1.500</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -137,14 +137,14 @@
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>End of Trial Minimum Duration (in sec)</Name>
 					<DefaultValue>1.500</DefaultValue>
-					<Value>1.000</Value>
+					<Value>0</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
 					<TypeIdentifier>(0x512a166f, 0x5c3ef83f)</TypeIdentifier>
 					<Name>End of Trial Maximum Duration (in sec)</Name>
 					<DefaultValue>3.500</DefaultValue>
-					<Value>1.500</Value>
+					<Value>2.500</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -274,7 +274,7 @@
 					<TypeIdentifier>(0xcc14d8d6, 0xf27ecb73)</TypeIdentifier>
 					<Name>Action to perform</Name>
 					<DefaultValue>Pause</DefaultValue>
-					<Value>Stop</Value>
+					<Value>Pause</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
