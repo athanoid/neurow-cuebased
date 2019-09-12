@@ -18,6 +18,14 @@ public class GetStimulus : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+		if (Input.GetKey("escape"))
+		{
+			Debug.Log ("Quit!");
+			Application.Quit();
+		}
+
+
 		getStim ();
 
 	}

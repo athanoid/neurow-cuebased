@@ -39,6 +39,12 @@ public class MoveBoat : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (Input.GetKey("escape"))
+		{
+			Debug.Log ("Quit!");
+			Application.Quit();
+		}
+
 		//Debug.Log (Assets.LSL4Unity.Scripts.Examples.ExampleFloatInlet.signal);
 
 		// if simple ERD is selected, then only FWD, else FWD is automatic and L/R is through LDA input
