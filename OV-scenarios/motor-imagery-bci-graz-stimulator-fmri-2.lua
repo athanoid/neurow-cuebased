@@ -45,10 +45,13 @@ function process(box)
 	t = t + 0
 
 	-- rest duration
-	t = t + inter_trial_duration
+	--t = t + inter_trial_duration
 	
 	-- manages trials
 for k = 1, number_of_repetitions do
+
+	-- rest duration
+	t = t + inter_trial_duration -- 14 sec 
 
 	--######  left hand ######
 	for i = 1, number_of_trials do
@@ -61,25 +64,26 @@ for k = 1, number_of_repetitions do
 		-- warn the user the cue is going to appear
 
 		--box:send_stimulation(1, OVTK_StimulationId_Beep, t, 0)
-		t = t + wait_for_cue_duration
+		t = t + wait_for_cue_duration -- 1.5 sec
 
 		-- display cue
 	
 			box:send_stimulation(1, OVTK_GDF_Left, t, 0)
-			t = t + display_cue_duration
+			t = t + display_cue_duration -- 1.25 sec
 
 		
 		-- provide feedback
 
 		box:send_stimulation(1, OVTK_GDF_Feedback_Continuous, t, 0)
-		t = t + feedback_duration
+		t = t + feedback_duration -- 3.75 sec
 
 		-- ends trial
 		box:send_stimulation(1, OVTK_GDF_End_Of_Trial, t, 0)
-		t = t + end_of_trial_max_duration
+		t = t + end_of_trial_max_duration -- 2.5 sec
+		
 		--t = t + math.random(end_of_trial_min_duration, end_of_trial_max_duration)
 
-	end
+	end -- trials x 4 = 36 sec
 	
 	-- ######rest duration ######
 	t = t + inter_trial_duration
@@ -108,9 +112,10 @@ for k = 1, number_of_repetitions do
 		-- ends trial
 		box:send_stimulation(1, OVTK_GDF_End_Of_Trial, t, 0)
 		t = t + end_of_trial_max_duration
+		
 		--t = t + math.random(end_of_trial_min_duration, end_of_trial_max_duration)
 
-	end
+	end -- trials x 4 = 36 sec
 	
 	
 end
@@ -118,8 +123,8 @@ end
 	box:send_stimulation(1, OVTK_GDF_End_Of_Session, t, 0)
 	t = t + 5
 
-	box:send_stimulation(1, OVTK_StimulationId_Train, t, 0)
-	t = t + 1
+	--box:send_stimulation(1, OVTK_StimulationId_Train, t, 0)
+	--t = t + 1
 	
 	-- used to cause the acquisition scenario to stop
 	box:send_stimulation(1, OVTK_StimulationId_ExperimentStop, t, 0)
