@@ -115,15 +115,19 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>192</Value>
+					<Value>160</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>832</Value>
+					<Value>720</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
 					<Value></Value>
+				</Attribute>
+				<Attribute>
+					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
+					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -544,17 +548,6 @@
 			</Target>
 		</Link>
 		<Link>
-			<Identifier>(0x00000e72, 0x000007bb)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x00003850, 0x00003511)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x00006ead, 0x00003c67)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
 			<Identifier>(0x00000ec5, 0x00003e89)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x00002f18, 0x00001286)</BoxIdentifier>
@@ -566,6 +559,17 @@
 			</Target>
 		</Link>
 		<Link>
+			<Identifier>(0x00001692, 0x00007624)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x00005659, 0x0000361f)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x00002f18, 0x00001286)</BoxIdentifier>
+				<BoxInputIndex>1</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
 			<Identifier>(0x00001c54, 0x00000572)</Identifier>
 			<Source>
 				<BoxIdentifier>(0x00002f18, 0x00001286)</BoxIdentifier>
@@ -573,17 +577,6 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x00005c3e, 0x00007498)</BoxIdentifier>
-				<BoxInputIndex>1</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x00003185, 0x00006d35)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x00003850, 0x00003511)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x00002f18, 0x00001286)</BoxIdentifier>
 				<BoxInputIndex>1</BoxInputIndex>
 			</Target>
 		</Link>
@@ -607,6 +600,17 @@
 			<Target>
 				<BoxIdentifier>(0x00002f18, 0x00001286)</BoxIdentifier>
 				<BoxInputIndex>2</BoxInputIndex>
+			</Target>
+		</Link>
+		<Link>
+			<Identifier>(0x00006a69, 0x00005552)</Identifier>
+			<Source>
+				<BoxIdentifier>(0x00005659, 0x0000361f)</BoxIdentifier>
+				<BoxOutputIndex>1</BoxOutputIndex>
+			</Source>
+			<Target>
+				<BoxIdentifier>(0x00006ead, 0x00003c67)</BoxIdentifier>
+				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>
 		<Link>
@@ -684,7 +688,7 @@ and ensure that :
 		<Entry>
 			<Identifier>(0x0000775c, 0x000078ff)</Identifier>
 			<Type>(0x3bcce5d2, 0x43f2d968)</Type>
-			<Data>[{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":635,"identifier":"(0x0000553d, 0x000030ba)","name":"signals","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":783},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x000018cd, 0x00004f25)","index":0,"name":"tab","parentIdentifier":"(0x0000553d, 0x000030ba)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":2,"dividerPosition":293,"identifier":"(0x00001b03, 0x00002a97)","index":0,"maxDividerPosition":590,"name":"Vertical split","parentIdentifier":"(0x000018cd, 0x00004f25)","type":4},{"boxIdentifier":"(0x00007c73, 0x00000356)","childCount":0,"identifier":"(0x00002e79, 0x000049e3)","index":0,"parentIdentifier":"(0x00001b03, 0x00002a97)","type":3},{"boxIdentifier":"(0x00005c3e, 0x00007498)","childCount":0,"identifier":"(0x00000c4b, 0x00007127)","index":1,"parentIdentifier":"(0x00001b03, 0x00002a97)","type":3}]</Data>
+			<Data>[{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"height":635,"identifier":"(0x0000553d, 0x000030ba)","name":"signals","parentIdentifier":"(0xffffffff, 0xffffffff)","type":1,"width":778},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":1,"identifier":"(0x000018cd, 0x00004f25)","index":0,"name":"tab","parentIdentifier":"(0x0000553d, 0x000030ba)","type":2},{"boxIdentifier":"(0xffffffff, 0xffffffff)","childCount":2,"dividerPosition":293,"identifier":"(0x00001b03, 0x00002a97)","index":0,"maxDividerPosition":590,"name":"Vertical split","parentIdentifier":"(0x000018cd, 0x00004f25)","type":4},{"boxIdentifier":"(0x00007c73, 0x00000356)","childCount":0,"identifier":"(0x00002e79, 0x000049e3)","index":0,"parentIdentifier":"(0x00001b03, 0x00002a97)","type":3},{"boxIdentifier":"(0x00005c3e, 0x00007498)","childCount":0,"identifier":"(0x00000c4b, 0x00007127)","index":1,"parentIdentifier":"(0x00001b03, 0x00002a97)","type":3}]</Data>
 		</Entry>
 	</Metadata>
 	<Attributes>
