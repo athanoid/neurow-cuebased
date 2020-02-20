@@ -7,12 +7,15 @@ public class GetStimulus : MonoBehaviour {
 
 	public Image cross, leftarrow, rightarrow;
 
+	public GameObject EndofSessionPanel;
+
 	// Use this for initialization
 	void Start () {
 		
 		cross.enabled = false;
 		leftarrow.enabled = false;
 		rightarrow.enabled = false;
+		EndofSessionPanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -27,6 +30,9 @@ public class GetStimulus : MonoBehaviour {
 
 
 		getStim ();
+
+		if (Receivemarkers.markerint == 1010) //32770 experiment stop
+			EndofSessionPanel.SetActive(true); //pop window
 
 	}
 
