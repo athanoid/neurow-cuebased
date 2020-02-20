@@ -1,7 +1,7 @@
 <OpenViBE-Scenario>
-	<FormatVersion>1</FormatVersion>
+	<FormatVersion>2</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
-	<CreatorVersion>2.0.1</CreatorVersion>
+	<CreatorVersion>2.2.0</CreatorVersion>
 	<Settings></Settings>
 	<Inputs></Inputs>
 	<Outputs></Outputs>
@@ -27,7 +27,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Timeout delay</Name>
 					<DefaultValue>5</DefaultValue>
-					<Value>300</Value>
+					<Value>410</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -46,10 +46,6 @@
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
 					<Value>880</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -285,7 +281,7 @@
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Spatial Filter Coefficients</Name>
 					<DefaultValue>1;0;0;0;0;1;0;0;0;0;1;0;0;0;0;1</DefaultValue>
-					<Value>3.895456e-002 3.778097e-002 2.938309e-002 -9.788274e-002 -3.968528e-002 6.916557e-002 -1.781311e-002 -4.550318e-002 1.838463e-003 -4.318400e-003 -4.758229e-002 8.746883e-002 -8.669490e-002 1.470763e-001 -3.010208e-002 7.847492e-002 -9.258204e-002 -1.588618e-001 3.019603e-002 3.670722e-001 -1.344270e-001 -2.053658e-002 1.669169e-002 -5.694708e-002 1.752974e-002 -7.353498e-001 3.759703e-001 2.223170e-001 5.157963e-002 -2.557718e-002 6.962140e-002 1.587784e-002 -2.299291e-002 8.573178e-002 5.156094e-002 4.208025e-003 -3.231480e-004 -1.741512e-002 -1.317612e-001 1.216400e-001 -1.189420e-002 -1.193133e-002 -1.246434e-001 6.549134e-002 -1.568162e-001 7.802345e-002 1.501166e-001 -4.629385e-001 7.413952e-001 -3.052243e-001 6.240394e-004 4.298791e-002 -2.305681e-002 -1.543605e-002 6.986751e-002 -1.079839e-001 -1.920896e-002 -4.290301e-002 2.369059e-002 4.141804e-002 -3.499206e-003 -5.287728e-002 8.020091e-003 -1.265797e-003 </Value>
+					<Value>-1.082114e-001 4.685760e-001 -3.544043e-002 4.573300e-002 -2.572461e-002 2.025501e-002 -2.813483e-001 -1.096762e-001 3.726331e-002 -5.267634e-001 -5.803814e-002 2.409423e-001 -4.485025e-002 7.282470e-002 4.555725e-001 1.448566e-002 1.386524e-001 -9.009798e-002 -1.780710e-001 1.256969e-001 -5.130940e-002 2.987887e-002 -6.050551e-002 9.617017e-002 4.416526e-002 -7.618225e-002 2.121995e-002 -4.789311e-002 1.209106e-001 -7.247473e-003 3.267675e-002 1.537727e-002 -9.382764e-004 -5.727098e-003 -1.732264e-003 -2.238397e-003 1.155525e-002 8.075033e-003 7.448413e-004 -2.110711e-002 2.822916e-003 -3.109532e-002 6.749932e-003 9.074530e-003 1.675107e-002 5.889398e-003 1.221918e-002 5.992729e-003 6.732111e-003 -1.274952e-002 1.696124e-004 -2.419000e-004 2.906963e-002 -2.428724e-004 -3.349322e-002 1.252463e-002 -1.540250e-002 5.111605e-002 -7.378641e-001 -7.269145e-003 2.729030e-002 1.020217e-002 6.687131e-001 -2.451945e-003 </Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -313,11 +309,11 @@
 			<Attributes>
 				<Attribute>
 					<Identifier>(0x1fa7a38f, 0x54edbe0b)</Identifier>
-					<Value>64</Value>
+					<Value>80</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
-					<Value>480</Value>
+					<Value>576</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x30a4e5c9, 0x83502953)</Identifier>
@@ -333,7 +329,7 @@
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x8d21ff41, 0xdf6afe7e)</Identifier>
-					<Value>C:/Users/eeguser/Documents/git/neurow-cuebased/OV-scenarios/csp-spatial-filter.cfg</Value>
+					<Value>D:/_Thanos/git/neurow-cuebased/OV-scenarios/csp-spatial-filter.cfg</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0xc80ce8af, 0xf699f813)</Identifier>
@@ -845,7 +841,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>C:/Users/eeguser/Desktop/01-Andreas/MO-neurow-rand/motor-imagery-1-[2019.09.23-14.48.28].ov</Value>
+					<Value>D:/_Thanos/git/neurow-cuebased/OV-scenarios/signals/motor-imagery-1-[2020.02.17-15.04.20].ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
@@ -1467,17 +1463,6 @@
 			</Source>
 			<Target>
 				<BoxIdentifier>(0x4bfa765b, 0x56988125)</BoxIdentifier>
-				<BoxInputIndex>0</BoxInputIndex>
-			</Target>
-		</Link>
-		<Link>
-			<Identifier>(0x00005100, 0x00005fa2)</Identifier>
-			<Source>
-				<BoxIdentifier>(0x122ee495, 0x1815b528)</BoxIdentifier>
-				<BoxOutputIndex>0</BoxOutputIndex>
-			</Source>
-			<Target>
-				<BoxIdentifier>(0x0000220e, 0x00002fa6)</BoxIdentifier>
 				<BoxInputIndex>0</BoxInputIndex>
 			</Target>
 		</Link>

@@ -1,7 +1,7 @@
 <OpenViBE-Scenario>
-	<FormatVersion>1</FormatVersion>
+	<FormatVersion>2</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
-	<CreatorVersion>2.0.1</CreatorVersion>
+	<CreatorVersion>2.2.0</CreatorVersion>
 	<Settings></Settings>
 	<Inputs></Inputs>
 	<Outputs></Outputs>
@@ -114,7 +114,7 @@
 					<TypeIdentifier>(0x007deef9, 0x2f3e95c6)</TypeIdentifier>
 					<Name>Timeout delay</Name>
 					<DefaultValue>5</DefaultValue>
-					<Value>205</Value>
+					<Value>410</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 				<Setting>
@@ -133,10 +133,6 @@
 				<Attribute>
 					<Identifier>(0x207c9054, 0x3c841b63)</Identifier>
 					<Value>816</Value>
-				</Attribute>
-				<Attribute>
-					<Identifier>(0x341d3912, 0x1478de86)</Identifier>
-					<Value>1</Value>
 				</Attribute>
 				<Attribute>
 					<Identifier>(0x4e7b798a, 0x183beafb)</Identifier>
@@ -510,7 +506,7 @@
 					<TypeIdentifier>(0x330306dd, 0x74a95f98)</TypeIdentifier>
 					<Name>Filename</Name>
 					<DefaultValue></DefaultValue>
-					<Value>C:/Users/eeguser/Desktop/01-Andreas/MO-neurow-rand/motor-imagery-1-[2019.09.23-14.48.28].ov</Value>
+					<Value>D:/_Thanos/git/neurow-cuebased/OV-scenarios/signals/motor-imagery-1-[2020.02.17-15.04.20].ov</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>
