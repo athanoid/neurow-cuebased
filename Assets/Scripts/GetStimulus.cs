@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GetStimulus : MonoBehaviour {
 
 	public Image cross, leftarrow, rightarrow;
 
 	public GameObject EndofSessionPanel;
+
+	//public GameObject lslobject;
 
 	// Use this for initialization
 	void Start () {
@@ -16,17 +19,26 @@ public class GetStimulus : MonoBehaviour {
 		leftarrow.enabled = false;
 		rightarrow.enabled = false;
 		EndofSessionPanel.SetActive(false);
+
+		Cursor.visible = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 
+		//quit 
 		if (Input.GetKey("escape"))
 		{
 			Debug.Log ("Quit!");
 			Application.Quit();
 		}
+
+		//reload scene
+//		if (Input.GetKey(KeyCode.R))
+//		{
+//			ReloadScene();
+//		}
 
 
 		getStim ();
@@ -75,6 +87,13 @@ public class GetStimulus : MonoBehaviour {
 //			break;
 		}
 	}
+
+
+//	public void ReloadScene(){
+//		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+//		Instantiate(lslobject, new Vector3(0, 0, 0), Quaternion.identity);
+//		Debug.Log ("RELOAD Scene!");
+//	}
 
 
 }
