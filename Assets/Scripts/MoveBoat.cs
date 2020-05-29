@@ -109,7 +109,7 @@ public class MoveBoat : MonoBehaviour {
 //				left = true;
 //			else left = false;
 
-			if (Input.GetKey (KeyCode.LeftArrow) ||(left  && hidearrow)&& ldaSignal()>=0) {
+			if (Input.GetKey (KeyCode.LeftArrow) ||((left  && hidearrow) && ldaSignal()>0)) {
 					//left = true;
 
 					//			right = false;
@@ -119,7 +119,7 @@ public class MoveBoat : MonoBehaviour {
 						transform.Rotate (Vector3.down * turnspeed * Time.deltaTime, Space.World);
 					//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 				}
-			if (Input.GetKey (KeyCode.RightArrow) ||(right && hidearrow) && ldaSignal()<=0) {
+			if (Input.GetKey (KeyCode.RightArrow) ||((right && hidearrow) && ldaSignal()<0)) {
 					//			left = false;
 
 					right = true;
@@ -193,12 +193,21 @@ public class MoveBoat : MonoBehaviour {
 			//left= false;
 			//right= false;
 			break;
-		}
+        default:
+            crossui.enabled = false;
+            leftarrow.enabled = false;
+            rightarrow.enabled = false;
+            cross = false;
+            left = false;
+            right = false;
+            hidearrow = false;
+            break;
+        }
 	}
 
 	public static float ldaSignal(){
-		return Assets.LSL4Unity.Scripts.Examples.ExampleFloatInlet.signal;
-	}
+        return Assets.LSL4Unity.Scripts.Examples.ExampleFloatInlet.signal;
+    }
 
 
 	void getStimOnline()

@@ -80,11 +80,11 @@ public class GetStimulus : MonoBehaviour {
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;
-//		default:
-//			cross.enabled = false;
-//			leftarrow.enabled = false;
-//			rightarrow.enabled = false;
-//			break;
+		default:
+			cross.enabled = false;
+			leftarrow.enabled = false;
+			rightarrow.enabled = false;
+			break;
 		}
 	}
 
