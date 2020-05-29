@@ -11,16 +11,26 @@ namespace Assets.LSL4Unity.Scripts.Examples
     public class ExampleFloatInlet : AFloatInlet
     {
         public string lastSample = String.Empty;
-		public static float signal = 999f;
+        public static float signal;
 
         protected override void Process(float[] newSample, double timeStamp)
         {
             // just as an example, make a string out of all channel values of this sample
             lastSample = string.Join(" ", newSample.Select(c => c.ToString()).ToArray());
 
-            //Debug.Log(string.Format("Got {0} samples at {1}", newSample.Length, timeStamp));
-			signal = newSample [0];
-			//Debug.Log (signal);
+            Debug.Log(
+                string.Format("Got {0} samples at {1}", newSample.Length, timeStamp)
+                );
+
+            if (lastSample != String.Empty)
+            {
+                signal = float.Parse(lastSample);
+            }
+            else { 
+                signal = 0f;
+            }
+
+            
         }
     }
 }
