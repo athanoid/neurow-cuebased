@@ -15,6 +15,6 @@ public class MarkersToUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        marker.text = Receivemarkers.markerint.ToString();
+        marker.text = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint.ToString();
     }
 }

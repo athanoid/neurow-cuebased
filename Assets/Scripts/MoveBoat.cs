@@ -56,16 +56,18 @@ public class MoveBoat : MonoBehaviour {
 		//if((compass.localEulerAngles.y >= (360 - stoppingAngle) && compass.localEulerAngles.y <= 360) || (compass.localEulerAngles.y >= 0 && compass.localEulerAngles.y <= (0 + stoppingAngle)))
 		//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 
-		if (Receivemarkers.markerint == 1010) //32770 experiment stop
+		if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 1010) //32770 experiment stop
 			EndofSessionPanel.SetActive(true); //pop window
-			//Debug.Log ("End of Session!");
+                      
+        //Debug.Log ("End of Session!");
+        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 33282) //32770 experiment start
+            EndofSessionPanel.SetActive(false); //pop window
 
-
-		//Todo
-		// on 32770 experiment stop
-		// quit app
-		if (Receivemarkers.markerint == 32770) //32770
-			Debug.Log ("32770 experiment stop");
+        //Todo
+        // on 32770 experiment stop
+        // quit app
+        //if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 32770) //32770
+			//Debug.Log ("32770 experiment stop");
 		
 
 
@@ -109,20 +111,20 @@ public class MoveBoat : MonoBehaviour {
 //				left = true;
 //			else left = false;
 
-			if (Input.GetKey (KeyCode.LeftArrow) ||((left  && hidearrow) && ldaSignal()>0)) {
-					//left = true;
+			if (Input.GetKey (KeyCode.LeftArrow) ||((left  && hidearrow) && ldaSignal()<0.0f)) {
+					left = true;
+					right = false;
 
-					//			right = false;
 					if(!Settings.reverseHands)
 						transform.Rotate (Vector3.up * turnspeed * Time.deltaTime, Space.World);
 					else
 						transform.Rotate (Vector3.down * turnspeed * Time.deltaTime, Space.World);
 					//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 				}
-			if (Input.GetKey (KeyCode.RightArrow) ||((right && hidearrow) && ldaSignal()<0)) {
-					//			left = false;
-
+			if (Input.GetKey (KeyCode.RightArrow) ||((right && hidearrow) && ldaSignal()>=0.0f)) {
+					left = false;
 					right = true;
+
 					if(!Settings.reverseHands)
 						transform.Rotate (Vector3.down * turnspeed * Time.deltaTime, Space.World);
 					else
@@ -144,7 +146,7 @@ public class MoveBoat : MonoBehaviour {
 
 	void getStim()
 	{
-		int stim = Receivemarkers.markerint;
+		int stim = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint;
 
 		switch (stim)
 		{
@@ -157,6 +159,15 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
+		case 33282: //beep
+			crossui.enabled = true;
+			leftarrow.enabled = false;
+			rightarrow.enabled = false;
+			cross = true;
+			left = false;
+			right = false;
+			hidearrow = false;
+			break;  
 		case 786: // show cross
 			crossui.enabled = true;
 			leftarrow.enabled = false;
@@ -206,13 +217,13 @@ public class MoveBoat : MonoBehaviour {
 	}
 
 	public static float ldaSignal(){
-        return Assets.LSL4Unity.Scripts.Examples.ExampleFloatInlet.signal;
+        return Assets.LSL4Unity.Scripts.Examples.ReceiveLSLsignal.signal;
     }
 
 
 	void getStimOnline()
 	{
-		int stim = Receivemarkers.markerint;
+		int stim = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint;
 
 		switch (stim)
 		{
@@ -225,6 +236,15 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
+		case 33282: //beep
+			crossui.enabled = true;
+			leftarrow.enabled = false;
+			rightarrow.enabled = false;
+			cross = true;
+			left = false;
+			right = false;
+			hidearrow = false;
+			break;  
 		case 786: // show cross
 			crossui.enabled = true;
 			leftarrow.enabled = false;

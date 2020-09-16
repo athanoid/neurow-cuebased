@@ -1,8 +1,11 @@
-﻿using System.Collections; 
-using UnityEngine; 
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 using Assets.LSL4Unity.Scripts.AbstractInlets;
 
-namespace Assets.LSL4Unity.Scripts.Examples {
+namespace Assets.LSL4Unity.Scripts.Examples
+{
 
     /// <summary>
     /// Example that works with the Resolver component.
@@ -13,23 +16,21 @@ namespace Assets.LSL4Unity.Scripts.Examples {
     /// and how they should processed in your game logic
     ///
     /// </summary>
-    public class DemoInletForFloatSamples : InletFloatSamples
+    public class ReceiveLSLsignal : InletFloatSamples
     {
-        public Transform targetTransform;
-
-        public bool useX;
-        public bool useY;
-        public bool useZ;
 
         private bool pullSamplesContinuously = false;
+
+        public static float signal;
+        public float lslsignal;
 
 
         void Start()
         {
             // [optional] call this only, if your gameobject hosting this component
             // got instantiated during runtime
-            
-            // registerAndLookUpStream();
+
+            registerAndLookUpStream();
         }
 
         protected override bool isTheExpected(LSLStreamInfoWrapper stream)
@@ -51,16 +52,13 @@ namespace Assets.LSL4Unity.Scripts.Examples {
         /// <param name="timeStamp"></param>
         protected override void Process(float[] newSample, double timeStamp)
         {
-            //Assuming that a sample contains at least 3 values for x,y,z
-            float x = useX ? newSample[0] : 1;
-            float y = useY ? newSample[1] : 1;
-            float z = useZ ? newSample[2] : 1;
 
-            // we map the data to the scale factors
-            var targetScale = new Vector3(x, y, z);
+            //marker = string.Join(" ", newSample.Select(c => c.ToString()).ToArray());
+            //markerint = newSample[0];
 
-            // apply the rotation to the target transform
-            targetTransform.localScale = targetScale;
+            lslsignal = newSample[0];
+            signal = lslsignal;
+
         }
 
         protected override void OnStreamAvailable()
@@ -72,11 +70,12 @@ namespace Assets.LSL4Unity.Scripts.Examples {
         {
             pullSamplesContinuously = false;
         }
-         
+
         private void Update()
         {
-            if(pullSamplesContinuously)
+            if (pullSamplesContinuously)
                 pullSamples();
         }
     }
 }
+

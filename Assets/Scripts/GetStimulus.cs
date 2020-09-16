@@ -42,16 +42,19 @@ public class GetStimulus : MonoBehaviour {
 
 
 		getStim ();
-
-		if (Receivemarkers.markerint == 1010) //32770 experiment stop
+        
+		if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 1010) //32770 experiment stop
 			EndofSessionPanel.SetActive(true); //pop window
 
-	}
+        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 33282) //32770 experiment start
+            EndofSessionPanel.SetActive(false); //pop window
+
+    }
 
 
 	void getStim()
 	{
-		int stim = Receivemarkers.markerint;
+		int stim = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint;
 
 		switch (stim)
 		{
@@ -60,6 +63,11 @@ public class GetStimulus : MonoBehaviour {
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;
+		case 33282: //beep
+			cross.enabled = true;
+			leftarrow.enabled = false;
+			rightarrow.enabled = false;
+			break;               
 		case 786: // show cross
 			cross.enabled = true;
 			leftarrow.enabled = false;
