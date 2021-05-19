@@ -5,8 +5,8 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-#/[Bb]uild/
-#/[Bb]uilds/
+/[Bb]uild/
+/[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
@@ -14,7 +14,7 @@
 !/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
-# /[Aa]ssets/AssetStoreTools*
+/[Aa]ssets/AssetStoreTools*
 
 # TextMesh Pro files
 [Aa]ssets/TextMesh*Pro/
