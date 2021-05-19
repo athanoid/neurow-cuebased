@@ -43,10 +43,12 @@ public class GetStimulus : MonoBehaviour {
 
 		getStim ();
         
-		if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 1010) //32770 experiment stop
-			EndofSessionPanel.SetActive(true); //pop window
 
-        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 33282) //32770 experiment start
+        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 1010 || Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 11) //32770 experiment stop
+            EndofSessionPanel.SetActive(true); //pop window
+
+        //Debug.Log ("End of Session!");
+        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 33282 || Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 2) //32770 experiment start
             EndofSessionPanel.SetActive(false); //pop window
 
     }
@@ -58,33 +60,33 @@ public class GetStimulus : MonoBehaviour {
 
 		switch (stim)
 		{
-		case 800: //hide cross
-			cross.enabled = false;
+		case 800: case 10: //hide cross
+            cross.enabled = false;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;
-		case 33282: //beep
-			cross.enabled = true;
+		case 33282:case 6://beep
+            cross.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;               
-		case 786: // show cross
-			cross.enabled = true;
+		case 786: case 5:  // show cross
+            cross.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;
-		case 770: // right arrow
-			cross.enabled = true;
+		case 770: case 8:// right arrow
+            cross.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = true;
 			break;
-		case 769: // left arrow
-			cross.enabled = true;
+		case 769: case 7:// left arrow
+            cross.enabled = true;
 			leftarrow.enabled = true;
 			rightarrow.enabled = false;
 			break;
-		case 781: // hide arrow
-			cross.enabled = true;
+		case 781: case 9:// hide arrow
+            cross.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;

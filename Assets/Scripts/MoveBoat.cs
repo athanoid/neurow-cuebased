@@ -56,11 +56,11 @@ public class MoveBoat : MonoBehaviour {
 		//if((compass.localEulerAngles.y >= (360 - stoppingAngle) && compass.localEulerAngles.y <= 360) || (compass.localEulerAngles.y >= 0 && compass.localEulerAngles.y <= (0 + stoppingAngle)))
 		//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 
-		if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 1010) //32770 experiment stop
+		if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 1010 || Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 11) //32770 experiment stop
 			EndofSessionPanel.SetActive(true); //pop window
                       
         //Debug.Log ("End of Session!");
-        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 33282) //32770 experiment start
+        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 33282 || Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 2) //32770 experiment start
             EndofSessionPanel.SetActive(false); //pop window
 
         //Todo
@@ -150,8 +150,8 @@ public class MoveBoat : MonoBehaviour {
 
 		switch (stim)
 		{
-		case 800: //hide cross
-			crossui.enabled = false;
+		case 800: case 10: //hide cross
+            crossui.enabled = false;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross= false; 
@@ -159,8 +159,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
-		case 33282: //beep
-			crossui.enabled = true;
+		case 33282: case 6: //beep
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross = true;
@@ -168,8 +168,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;  
-		case 786: // show cross
-			crossui.enabled = true;
+		case 786: case 5: // show cross
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross = true;
@@ -177,8 +177,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
-		case 770: // right arrow
-			crossui.enabled = true;
+		case 770: case 8: // right arrow
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = true;
 			cross= true;
@@ -186,8 +186,8 @@ public class MoveBoat : MonoBehaviour {
 			right = true;
 			hidearrow = false;
 			break;
-		case 769: // left arrow
-			crossui.enabled = true;
+		case 769: case 7: // left arrow
+            crossui.enabled = true;
 			leftarrow.enabled = true;
 			rightarrow.enabled = false;
 			cross= true; 
@@ -195,8 +195,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
-		case 781: // hide arrow
-			crossui.enabled = true;
+		case 781: case 9: // hide arrow
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross= true;
@@ -227,8 +227,8 @@ public class MoveBoat : MonoBehaviour {
 
 		switch (stim)
 		{
-		case 800: //hide cross
-			crossui.enabled = false;
+        case 800: case 10: //hide cross
+            crossui.enabled = false;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross= false;
@@ -236,8 +236,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
-		case 33282: //beep
-			crossui.enabled = true;
+		case 33282: case 6://beep
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross = true;
@@ -245,8 +245,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;  
-		case 786: // show cross
-			crossui.enabled = true;
+		case 786: case 5:// show cross
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross = true;
@@ -254,8 +254,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
-		case 770: // right arrow
-			crossui.enabled = true;
+		case 770: case 8:// right arrow
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = true;
 			cross= true;
@@ -263,8 +263,8 @@ public class MoveBoat : MonoBehaviour {
 			right = true;
 			hidearrow = false;
 			break;
-		case 769: // left arrow
-			crossui.enabled = true;
+		case 769: case 7:// left arrow
+            crossui.enabled = true;
 			leftarrow.enabled = true;
 			rightarrow.enabled = false;
 			cross= true;
@@ -272,8 +272,8 @@ public class MoveBoat : MonoBehaviour {
 			right = false;
 			hidearrow = false;
 			break;
-		case 781: // hide arrow
-			crossui.enabled = true;
+		case 781: case 9:// hide arrow
+            crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross= true;

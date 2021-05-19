@@ -1980,8 +1980,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 567346704}
-  m_LocalRotation: {x: 0.10729986, y: 0.0029745458, z: 0.00032098228, w: -0.9942222}
-  m_LocalPosition: {x: -1.2999985, y: -5.5500083, z: -17.400003}
+  m_LocalRotation: {x: 0.3423792, y: 0.20807402, z: 0.07803689, w: -0.9129031}
+  m_LocalPosition: {x: -0.478204, y: -11.166334, z: -26.636845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3439,7 +3439,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 958113408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc033cd2cffec7459d6fa31ad6a961b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8efbf5f0c53b27642a8f15ed5f93ab9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knownStreams: []
@@ -3448,11 +3448,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: AStreamIsFound
-        m_Mode: 0
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3464,11 +3464,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: AStreamGotLost
-        m_Mode: 0
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
