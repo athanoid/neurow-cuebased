@@ -12,7 +12,7 @@ public class MoveBoat : MonoBehaviour {
 	public Transform compass;
 	public GameObject EndofSessionPanel;
 
-	public Image crossui, leftarrow, rightarrow;
+	public Image crossui, rcrossui, leftarrow, rightarrow;
 	public static bool cross, left, right, hidearrow = false;
 	public static bool training;
 
@@ -25,7 +25,8 @@ public class MoveBoat : MonoBehaviour {
 		Settings.reverseHands = true;
 		boatspeed = 5f;
 
-		crossui.enabled = false;
+        rcrossui.enabled = true;
+        crossui.enabled = false;
 		leftarrow.enabled = false;
 		rightarrow.enabled = false;
 
@@ -169,6 +170,7 @@ public class MoveBoat : MonoBehaviour {
 			hidearrow = false;
 			break;  
 		case 786: case 5: // show cross
+            rcrossui.enabled = false;
             crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
@@ -178,6 +180,7 @@ public class MoveBoat : MonoBehaviour {
 			hidearrow = false;
 			break;
 		case 770: case 8: // right arrow
+rcrossui.enabled = false;
             crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = true;
@@ -187,7 +190,8 @@ public class MoveBoat : MonoBehaviour {
 			hidearrow = false;
 			break;
 		case 769: case 7: // left arrow
-            crossui.enabled = true;
+                rcrossui.enabled = false;
+                crossui.enabled = true;
 			leftarrow.enabled = true;
 			rightarrow.enabled = false;
 			cross= true; 
@@ -196,7 +200,8 @@ public class MoveBoat : MonoBehaviour {
 			hidearrow = false;
 			break;
 		case 781: case 9: // hide arrow
-            crossui.enabled = true;
+                rcrossui.enabled = false;
+                crossui.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			cross= true;
@@ -205,7 +210,8 @@ public class MoveBoat : MonoBehaviour {
 			//right= false;
 			break;
         default:
-            crossui.enabled = false;
+                rcrossui.enabled = true;
+                crossui.enabled = false;
             leftarrow.enabled = false;
             rightarrow.enabled = false;
             cross = false;

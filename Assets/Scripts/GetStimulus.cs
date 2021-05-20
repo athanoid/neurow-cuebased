@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GetStimulus : MonoBehaviour {
 
-	public Image cross, leftarrow, rightarrow;
+	public Image cross, rcross, leftarrow, rightarrow;
 
 	public GameObject EndofSessionPanel;
 
@@ -14,8 +14,9 @@ public class GetStimulus : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		cross.enabled = false;
+
+        rcross.enabled = true;
+        cross.enabled = false;
 		leftarrow.enabled = false;
 		rightarrow.enabled = false;
 		EndofSessionPanel.SetActive(false);
@@ -71,27 +72,32 @@ public class GetStimulus : MonoBehaviour {
 			rightarrow.enabled = false;
 			break;               
 		case 786: case 5:  // show cross
+            rcross.enabled = false;
             cross.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;
 		case 770: case 8:// right arrow
+            rcross.enabled = false;
             cross.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = true;
 			break;
 		case 769: case 7:// left arrow
+            rcross.enabled = false;
             cross.enabled = true;
 			leftarrow.enabled = true;
 			rightarrow.enabled = false;
 			break;
 		case 781: case 9:// hide arrow
+            rcross.enabled = false;
             cross.enabled = true;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;
 		default:
-			cross.enabled = false;
+            rcross.enabled = true;
+            cross.enabled = false;
 			leftarrow.enabled = false;
 			rightarrow.enabled = false;
 			break;
