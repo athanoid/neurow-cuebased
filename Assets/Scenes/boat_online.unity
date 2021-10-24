@@ -3774,6 +3774,8 @@ GameObject:
   - component: {fileID: 994781086}
   - component: {fileID: 994781088}
   - component: {fileID: 994781087}
+  - component: {fileID: 994781090}
+  - component: {fileID: 994781089}
   m_Layer: 0
   m_Name: AObjectListeningToAStream
   m_TagString: Untagged
@@ -3800,7 +3802,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994781085}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49b0e1884d4f9ca458d9649dcc46cbf6, type: 3}
   m_Name: 
@@ -3814,7 +3816,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994781085}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 002950752cea24e4fa0d1956aa5d23bc, type: 3}
   m_Name: 
@@ -3823,6 +3825,34 @@ MonoBehaviour:
   StreamType: Markers
   marker: 
   lslsignal: 0
+--- !u!114 &994781089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994781085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0678cde2fd9054689a4c62c459e6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamName: openvibeMarkers
+  StreamType: Markers
+  lslDebug: 0
+--- !u!114 &994781090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994781085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9023a2bb4b39df1488f5a61ddb717fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamName: classifiedMarkers
+  StreamType: Markers
+  lslDebug: 0
 --- !u!1 &998215808
 GameObject:
   m_ObjectHideFlags: 0

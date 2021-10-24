@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.LSL4Unity.Scripts.Examples;
 
 public class SignaltoUI : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SignaltoUI : MonoBehaviour
     void Update()
     {
 
-        lda.text = MoveBoat.ldaSignal().ToString();
+        // lda.text = MoveBoat.ldaSignal().ToString();
+        lda.text = LSLClassMarkers.getLSLsample.ToString();
     }
 }

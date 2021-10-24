@@ -5092,6 +5092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298351887}
   - component: {fileID: 1298351888}
+  - component: {fileID: 1298351889}
   m_Layer: 0
   m_Name: AObjectListeningToAStream
   m_TagString: Untagged
@@ -5118,7 +5119,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1298351886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 002950752cea24e4fa0d1956aa5d23bc, type: 3}
   m_Name: 
@@ -5127,6 +5128,20 @@ MonoBehaviour:
   StreamType: Markers
   marker: 
   lslsignal: 0
+--- !u!114 &1298351889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1298351886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0678cde2fd9054689a4c62c459e6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamName: openvibeMarkers
+  StreamType: Markers
+  lslDebug: 0
 --- !u!115 &1299080429
 MonoScript:
   m_ObjectHideFlags: 0

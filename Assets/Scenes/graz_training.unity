@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,6 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605558967}
   - component: {fileID: 605558968}
+  - component: {fileID: 605558969}
   m_Layer: 0
   m_Name: AObjectListeningToAStream
   m_TagString: Untagged
@@ -412,7 +413,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 605558966}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 002950752cea24e4fa0d1956aa5d23bc, type: 3}
   m_Name: 
@@ -421,6 +422,20 @@ MonoBehaviour:
   StreamType: Markers
   marker: 
   lslsignal: 0
+--- !u!114 &605558969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605558966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0678cde2fd9054689a4c62c459e6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StreamName: openvibeMarkers
+  StreamType: Markers
+  lslDebug: 0
 --- !u!1 &718346973
 GameObject:
   m_ObjectHideFlags: 0

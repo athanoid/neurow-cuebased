@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.LSL4Unity.Scripts.Examples;
 
 public class RotateRow : MonoBehaviour {
 
@@ -47,12 +48,12 @@ public class RotateRow : MonoBehaviour {
 		} else { // for ONLINE
 
 			// Row Left 
-			if ((Input.GetKey (KeyCode.LeftArrow) ||(MoveBoat.left && MoveBoat.hidearrow && MoveBoat.ldaSignal() < 0.0f) ) && this.gameObject.name == "Lpivot") {
+			if ((Input.GetKey (KeyCode.LeftArrow) ||(MoveBoat.left && MoveBoat.hidearrow && (LSLClassMarkers.getLSLsample == 769 || LSLClassMarkers.getLSLsample == 7)) ) && this.gameObject.name == "Lpivot") {
 				GameObject.FindGameObjectWithTag ("LeftRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 			}
 
 			// Row Right 
-			if ((Input.GetKey (KeyCode.RightArrow) || (MoveBoat.right && MoveBoat.hidearrow && MoveBoat.ldaSignal() >= 0.0f) ) && this.gameObject.name == "Rpivot") {
+			if ((Input.GetKey (KeyCode.RightArrow) || (MoveBoat.right && MoveBoat.hidearrow && (LSLClassMarkers.getLSLsample == 770 || LSLClassMarkers.getLSLsample == 8)) ) && this.gameObject.name == "Rpivot") {
 				GameObject.FindGameObjectWithTag ("RightRow").transform.Rotate (Vector3.right * speed * Time.deltaTime);
 
 			}

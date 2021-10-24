@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Assets.LSL4Unity.Scripts.Examples;
 
 public class MoveBoat : MonoBehaviour {
 
@@ -56,22 +57,22 @@ public class MoveBoat : MonoBehaviour {
 		//if((compass.localEulerAngles.y >= (360 - stoppingAngle) && compass.localEulerAngles.y <= 360) || (compass.localEulerAngles.y >= 0 && compass.localEulerAngles.y <= (0 + stoppingAngle)))
 		//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 
-		if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 1010 || Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 11) //32770 experiment stop
+		if (LSLMIMarkers.getLSLsample == 1010 || LSLMIMarkers.getLSLsample == 11) //32770 experiment stop
 			EndofSessionPanel.SetActive(true); //pop window
                       
         //Debug.Log ("End of Session!");
-        if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 33282 || Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 2) //32770 experiment start
+        if (LSLMIMarkers.getLSLsample == 33282 || LSLMIMarkers.getLSLsample == 2) //32770 experiment start
             EndofSessionPanel.SetActive(false); //pop window
 
         //Todo
         // on 32770 experiment stop
         // quit app
-        //if (Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint == 32770) //32770
-			//Debug.Log ("32770 experiment stop");
-		
+        //if (LSLMIMarkers.getLSLsample == 32770) //32770
+        //Debug.Log ("32770 experiment stop");
 
 
-		if (training) {
+
+        if (training) {
 
 			getStim ();
 			
@@ -111,7 +112,9 @@ public class MoveBoat : MonoBehaviour {
 //				left = true;
 //			else left = false;
 
-			if (Input.GetKey (KeyCode.LeftArrow) ||((left  && hidearrow) && ldaSignal()<0.0f)) {
+			//if (Input.GetKey (KeyCode.LeftArrow) ||((left  && hidearrow) && ldaSignal()<0.0f))
+                if (Input.GetKey(KeyCode.LeftArrow) || (left && hidearrow) && (LSLClassMarkers.getLSLsample == 769 || LSLClassMarkers.getLSLsample == 7))
+                {
 					left = true;
 					right = false;
 
@@ -121,8 +124,10 @@ public class MoveBoat : MonoBehaviour {
 						transform.Rotate (Vector3.down * turnspeed * Time.deltaTime, Space.World);
 					//	transform.Translate(Vector3.forward * boatspeed * Time.deltaTime);
 				}
-			if (Input.GetKey (KeyCode.RightArrow) ||((right && hidearrow) && ldaSignal()>=0.0f)) {
-					left = false;
+            //if (Input.GetKey (KeyCode.RightArrow) ||((right && hidearrow) && ldaSignal()>=0.0f))
+            else if (Input.GetKey(KeyCode.RightArrow) || (right && hidearrow) && (LSLClassMarkers.getLSLsample == 770 || LSLClassMarkers.getLSLsample == 8))
+            {
+                left = false;
 					right = true;
 
 					if(!Settings.reverseHands)
@@ -146,9 +151,10 @@ public class MoveBoat : MonoBehaviour {
 
 	void getStim()
 	{
-		int stim = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint;
+        int stim = LSLMIMarkers.getLSLsample;
 
-		switch (stim)
+
+        switch (stim)
 		{
 		case 800: case 10: //hide cross
             crossui.enabled = false;
@@ -216,16 +222,17 @@ public class MoveBoat : MonoBehaviour {
         }
 	}
 
-	public static float ldaSignal(){
-        return Assets.LSL4Unity.Scripts.Examples.ReceiveLSLsignal.signal;
-    }
+//	public static float ldaSignal(){
+//        return Assets.LSL4Unity.Scripts.Examples.ReceiveLSLsignal.signal;
+//    }
 
 
 	void getStimOnline()
 	{
-		int stim = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint;
+		//int stim = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint;
+        int stim = LSLMIMarkers.getLSLsample;
 
-		switch (stim)
+        switch (stim)
 		{
         case 800: case 10: //hide cross
             crossui.enabled = false;

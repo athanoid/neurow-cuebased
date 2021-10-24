@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.LSL4Unity.Scripts.Examples;
 
 public class MarkersToUI : MonoBehaviour {
 
@@ -15,6 +16,6 @@ public class MarkersToUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        marker.text = Assets.LSL4Unity.Scripts.Examples.ReceiveLSLmarkers.markerint.ToString();
+        marker.text = LSLMIMarkers.getLSLsample.ToString();
     }
 }
