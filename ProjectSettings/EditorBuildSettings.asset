@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/boat_training.unity
     guid: 876b0d51e9c7a814985297e2f65bb2db
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/graz_training.unity
     guid: 5b9e07c57221da2409f1ec2fa55b9b40
   - enabled: 0
