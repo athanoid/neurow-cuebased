@@ -1,6 +1,6 @@
 # neurow-cuebased
  
-![Unity Version](https://img.shields.io/badge/Unity-2018.1.0f2-orange.svg)
+![Unity Version](https://img.shields.io/badge/Unity-2018.4.3f1-orange.svg)
 ![OV Version](https://img.shields.io/badge/OpenVibe-3.1.0-blue.svg)
 
 ## Cite
