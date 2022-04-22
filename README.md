@@ -3,7 +3,7 @@
 ![Unity Version](https://img.shields.io/badge/Unity-2018.4.3f1-orange.svg)
 ![OV Version](https://img.shields.io/badge/OpenVibe-3.1.0-blue.svg)
 
-## Cite
+## Publication
 ```
 @conference{phycs16,
   author={Athanasios Vourvopoulos. André Ferreira. and Sergi Bermudez i Badia.},
